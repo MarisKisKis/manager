@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import task.manager.service.UserService;
 
-@RestController
+@RestController("/admin")
 public class AdminController {
 
     private final UserService userService;
@@ -15,13 +15,13 @@ public class AdminController {
         this.userService = userService;
     }
 
-    @GetMapping("/admin")
+    @GetMapping("/users")
     public String userList(Model model) {
         model.addAttribute("allUsers", userService.allUsers());
         return "admin";
     }
 
-    @PostMapping("/admin")
+    @PostMapping("/users")
     public String  deleteUser(@RequestParam(required = true, defaultValue = "" ) Long userId,
                               @RequestParam(required = true, defaultValue = "" ) String action,
                               Model model) {
@@ -31,9 +31,12 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @GetMapping("/admin/gt/{userId}")
+    @GetMapping("/users/gt/{userId}")
     public String  gtUser(@PathVariable("userId") Long userId, Model model) {
         model.addAttribute("allUsers", userService.usergtList(userId));
         return "admin";
     }
+
+    @PostMapping
+    public
 }
