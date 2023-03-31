@@ -35,7 +35,7 @@ public class Task {
     @Column(name = "created")
     private LocalDateTime created;
 
-    @Column(name = "statusChanged")
+    @Column(name = "status_changed")
     private LocalDateTime statusChanged;
 
     @Column(name = "information")
