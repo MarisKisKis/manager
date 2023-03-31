@@ -21,4 +21,5 @@ public interface ProjectService {
     List<ProjectDto> getAllProjects();
 
     List<SubprojectDto> getAllSubprojects();
+
 }

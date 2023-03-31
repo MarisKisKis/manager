@@ -24,12 +24,31 @@ public class TaskDto {
     private LocalDateTime statusChanged;
     private String information;
     private ProjectShortDto project;
+    private SubprojectShortDto subproject;
+    private UserShortDto creator;
+
 
     @Getter
     @Setter
     @Builder
     @Jacksonized
     public static class ProjectShortDto {
+        private long id;
+    }
+
+    @Getter
+    @Setter
+    @Builder
+    @Jacksonized
+    public static class SubprojectShortDto {
+        private long id;
+    }
+
+    @Getter
+    @Setter
+    @Builder
+    @Jacksonized
+    public static class UserShortDto {
         private long id;
     }
 }

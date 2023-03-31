@@ -45,4 +45,12 @@ public class Task {
     @JoinColumn(name = "project_id")
     private Project project;
 
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "subproject_id")
+    private Subproject subproject;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "user_id")
+    private User creator;
+
 }
